@@ -2,22 +2,43 @@
 Quickly build SecureCRT SSH sessions
 
 
------------------------------------------
-####   TABLE OF CONTENTS   ####
-
-1. [How to Use](#how-to-use)
-2. [Requirements](#requirements)
-4. [Compile](#compile)
-5. [Contributing](#contributing)
-
-
 --------------------------------------
 ####   HOW TO USE   ####
 AutoCRT will work on Windows or MacOS. Binary files for each are provided in the bin directory
 
+Running with the `-h` switch will provide you with some help
+```
+C:\Users\User> AutoCRT.exe -h
+Usage: AutoCRT [options]
 
+Options:
+  -h, --help            show this help message and exit
+  -t TEMPLATE, --template=TEMPLATE
+                        .INI file to use for template
+  -l USER, --user=USER  SSH login name to use
+  -w PASSWORD, --password=PASSWORD
+                        SSH password to use
+  -o OUTPUT_FOLDER, --output_folder=OUTPUT_FOLDER
+                        Folder where .INI file is created
+  -i HOSTNAME, --hostname=HOSTNAME
+                        IP address or hostname of remote device
+  -r RANGE, --range=RANGE
+                        IP address range of hosts to find
+  -d DEVICE_TYPE, --device_type=DEVICE_TYPE
+                        Device Type
+```
 
+Windows Example (Single IP)
+`AutoCRT.exe -t "C:\SecureCRT\Sessions\MyCustomerSession.ini" -i 192.168.1.1 -l admin -w password123`
 
+Windows Example (IP Range)
+`AutoCRT.exe -t "C:\SecureCRT\Sessions\MyCustomerSession.ini" -r 192.168.1.1-192.168.1.20 -l admin -w password123`
+
+MacOS Example (Single IP) 
+`./AutoCRT -t "/Users/MyUser/SecureCRT/Sessions/MyCustomerSession.ini" -i 192.168.1.1 -l admin -w password123`
+
+MacOS Example (IP Range) 
+`./AutoCRT -t "/Users/MyUser/SecureCRT/Sessions/MyCustomerSession.ini" -r 192.168.1.1-192.168.1.20 -l admin -w password123`
 
 
 --------------------------------------
@@ -44,11 +65,6 @@ AutoCRT requires the use of Python 2.7.X
   3. Use Pip to install PyInstaller `pip install pyinstaller`
     - You will also need to `pip install netmiko` and `pip install netaddr`
   4. Run command to compile: `pyinstaller --onefile --windowed --icon=acid.ico --clean Acid.py`
-
-
-
-
-
 
 
 [python_website]: https://www.python.org/

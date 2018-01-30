@@ -29,13 +29,19 @@ Options:
 ```
 
 Windows Example (Single IP)
+
 `AutoCRT.exe -t "C:\SecureCRT\Sessions\MyCustomerSession.ini" -i 192.168.1.1 -l admin -w password123`
 
+
 Windows Example (IP Range)
+
 `AutoCRT.exe -t "C:\SecureCRT\Sessions\MyCustomerSession.ini" -r 192.168.1.1-192.168.1.20 -l admin -w password123`
 
+
 MacOS Example (Single IP) 
+
 `./AutoCRT -t "/Users/MyUser/SecureCRT/Sessions/MyCustomerSession.ini" -i 192.168.1.1 -l admin -w password123`
+
 
 MacOS Example (IP Range) 
 `./AutoCRT -t "/Users/MyUser/SecureCRT/Sessions/MyCustomerSession.ini" -r 192.168.1.1-192.168.1.20 -l admin -w password123`
